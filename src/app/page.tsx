@@ -11,7 +11,7 @@ export default async function Home() {
           "use server";
 
           if (!session) {
-            await signIn();
+            await signIn("", { redirectTo: "/notes" });
           } else {
             redirect("/notes");
           }
