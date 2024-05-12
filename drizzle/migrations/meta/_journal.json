@@ -1,0 +1,13 @@
+{
+  "version": "6",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1715507066881,
+      "tag": "0000_woozy_dust",
+      "breakpoints": true
+    }
+  ]
+}
