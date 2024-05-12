@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { auth, signIn } from "@/lib/auth";
+import { auth, signIn, signOut } from "@/lib/auth";
 import { redirect } from "next/navigation";
 
 export default async function Home() {
@@ -13,12 +13,23 @@ export default async function Home() {
           if (!session) {
             await signIn();
           } else {
-            redirect("/dashboard");
+            redirect("/notes");
           }
         }}
       >
         <Button type="submit">Get Started</Button>
       </form>
+      {session && (
+        <form
+          action={async () => {
+            "use server";
+
+            await signOut();
+          }}
+        >
+          <Button type="submit">Sign Out</Button>
+        </form>
+      )}
       <pre>{JSON.stringify(session, null, 2)}</pre>
     </main>
   );
