@@ -17,6 +17,17 @@ export const users = sqliteTable("user", {
   image: text("image"),
 });
 
+export const notes = sqliteTable("note", {
+  id: text("id").primaryKey().notNull(),
+  title: text("title").default("Untitled Note"),
+  content: text("content", { mode: "json" }),
+  userId: text("userId")
+    .notNull()
+    .references(() => users.id, { onDelete: "cascade" }),
+  createdAt: text("created_at").default(sql`(CURRENT_TIMESTAMP)`),
+  updatedAt: text("updated_at").default(sql`(CURRENT_TIMESTAMP)`),
+});
+
 export const accounts = sqliteTable(
   "account",
   {

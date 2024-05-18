@@ -22,6 +22,13 @@
       "when": 1715515104699,
       "tag": "0002_real_makkari",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1715532098525,
+      "tag": "0003_giant_typhoid_mary",
+      "breakpoints": true
     }
   ]
 }
