@@ -13,4 +13,10 @@ export const checkSession = async () => {
     await signIn();
   }
 
+  return session;
+
 };
+
+export const generateUUID = () => {
+  return crypto.randomUUID();
+}
