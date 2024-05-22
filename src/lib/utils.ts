@@ -14,9 +14,26 @@ export const checkSession = async () => {
   }
 
   return session;
-
 };
 
 export const generateUUID = () => {
   return crypto.randomUUID();
+};
+
+export function formatToSQLiteTimestamp(date: Date) {
+  const pad = (number: number) => (number < 10 ? "0" + number : number);
+
+  return (
+    date.getUTCFullYear() +
+    "-" +
+    pad(date.getUTCMonth() + 1) +
+    "-" +
+    pad(date.getUTCDate()) +
+    " " +
+    pad(date.getUTCHours()) +
+    ":" +
+    pad(date.getUTCMinutes()) +
+    ":" +
+    pad(date.getUTCSeconds())
+  );
 }

@@ -87,11 +87,17 @@
   }
 
   .note-title {
-    @apply text-3xl font-bold bg-slate-50 mb-8 w-full;
+    @apply text-3xl font-bold bg-slate-100 mb-8 w-full;
   }
 
   .note-title:focus {
     @apply outline-none;
+  }
+}
+
+.tiptap {
+  p {
+    margin-bottom: 20px;
   }
 }
 
