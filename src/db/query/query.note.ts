@@ -2,7 +2,7 @@ import { formatToSQLiteTimestamp, generateUUID } from "@/lib/utils";
 import { db } from "../db";
 import { notes } from "../schema";
 import { eq, sql } from "drizzle-orm";
-import { text } from "drizzle-orm/sqlite-core";
+import { TNoteSelect } from "@/types";
 
 type newNote = typeof notes.$inferInsert;
 
@@ -31,3 +31,20 @@ export async function updateNote(noteId: string, data: any) {
     })
     .where(eq(notes.id, noteId));
 }
+
+export const getNoteByUserId = async (userId: string) => {
+  const note = await db
+    .select()
+    .from(notes)
+    .where(sql`${notes.userId} = ${userId}`);
+  return note;
+};
+
+export const getNoteByNoteId = async (noteId: string) => {
+  const note : TNoteSelect[]= await db
+    .select()
+    .from(notes)
+    .where(sql`${notes.id} = ${noteId}`)
+    .limit(1)
+  return note[0];
+};

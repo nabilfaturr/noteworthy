@@ -1,11 +1,27 @@
+import { getNoteByNoteId } from "@/db/query/query.note";
 import { auth, signIn } from "@/lib/auth";
-import React from "react";
+import { TNoteSelect } from "@/types";
 
-const Provider = async ({ children }: { children: React.ReactNode }) => {
+type TProvider = {
+  children: React.ReactNode;
+  noteId?: string;
+};
+
+const Provider = async ({ children, noteId }: TProvider) => {
   const session = await auth();
+  const userId = session?.user?.id as string;
 
   if (!session) {
     await signIn("", { redirectTo: "/notes" });
+  }
+
+  if (noteId) {
+    const note: TNoteSelect = await getNoteByNoteId(noteId);
+
+    if (note.userId !== userId) {
+      // return unauthorized
+      return null;
+    }
   }
 
   return <>{children}</>;
