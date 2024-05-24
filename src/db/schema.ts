@@ -20,7 +20,9 @@ export const users = sqliteTable("user", {
 export const notes = sqliteTable("note", {
   id: text("id").primaryKey().notNull(),
   title: text("title").default("Untitled Note"),
-  content: text("content", { mode: "json" }),
+  content: text("content", { mode: "text" }).default(
+    "<em>Tap here to start 🌎️</em>"
+  ),
   userId: text("userId")
     .notNull()
     .references(() => users.id, { onDelete: "cascade" }),
