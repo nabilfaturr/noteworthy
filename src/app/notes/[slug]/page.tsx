@@ -63,23 +63,27 @@ const Tiptap = ({ params }: { params: { slug: string } }) => {
   }, 1500);
 
   return (
-    <form
-      className="w-full h-full"
-      onChange={() => {
-        console.log("Something changing");
-      }}
-    >
-      <TitleForm handleTitleChange={handleTitleChange} />
-      {note.content === "" ? (
-        <p>Belum boleh masih kosong</p>
-      ) : (
-        <Editor
-          content={note.content}
-          handleNoteContentChange={handleNoteContentChange}
-          note={note}
-        />
-      )}
-    </form>
+    <div className="w-screen h-screen p-10 bg-white">
+      <div className="w-full h-full rounded-lg bg-slate-100  border px-8 md:px-16 lg:px-32 py-20">
+        <form
+          className="w-full h-full"
+          onChange={() => {
+            console.log("Something changing");
+          }}
+        >
+          <TitleForm handleTitleChange={handleTitleChange} />
+          {note.content === "" ? (
+            <p>Belum boleh masih kosong</p>
+          ) : (
+            <Editor
+              content={note.content}
+              handleNoteContentChange={handleNoteContentChange}
+              note={note}
+            />
+          )}
+        </form>
+      </div>
+    </div>
   );
 };
 
