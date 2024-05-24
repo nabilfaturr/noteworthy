@@ -18,8 +18,16 @@ const Provider = async ({ children, noteId }: TProvider) => {
   if (noteId) {
     const note: TNoteSelect = await getNoteByNoteId(noteId);
 
+    if (!note) {
+      // return null
+      console.log("404");
+
+      return null;
+    }
+
     if (note.userId !== userId) {
       // return unauthorized
+      console.log("Unauthorized");
       return null;
     }
   }
