@@ -1,13 +1,12 @@
 "use client";
 
 import Editor from "@/components/shared/Editor";
-import TitleForm, { DEFAULT_TITLE_VALUE } from "@/components/shared/TitleField";
-import { useEditor, EditorContent } from "@tiptap/react";
-import StarterKit from "@tiptap/starter-kit";
+import TitleForm from "@/components/shared/TitleField";
 import React from "react";
 import { useDebouncedCallback } from "use-debounce";
 
 const DEFAULT_CONTENT_VALUE = "<em>Tap here to start 🌎️</em>";
+const DEFAULT_TITLE_VALUE = "Untitled Note";
 
 const Tiptap = ({ params }: { params: { slug: string } }) => {
   const noteId = params.slug;
@@ -15,7 +14,7 @@ const Tiptap = ({ params }: { params: { slug: string } }) => {
     title: string;
     content: string | "";
   }>({
-    title: DEFAULT_TITLE_VALUE,
+    title: "",
     content: "",
   });
 
@@ -65,13 +64,12 @@ const Tiptap = ({ params }: { params: { slug: string } }) => {
   return (
     <div className="w-screen h-screen p-10 bg-white">
       <div className="w-full h-full rounded-lg bg-slate-100  border px-8 md:px-16 lg:px-32 py-20">
-        <form
-          className="w-full h-full"
-          onChange={() => {
-            console.log("Something changing");
-          }}
-        >
-          <TitleForm handleTitleChange={handleTitleChange} />
+        <form className="w-full h-full">
+          {/* {note.title === "" ? (
+            <p>Belum boleh masih kosong</p>
+          ) : (
+            
+          )}
           {note.content === "" ? (
             <p>Belum boleh masih kosong</p>
           ) : (
@@ -80,6 +78,21 @@ const Tiptap = ({ params }: { params: { slug: string } }) => {
               handleNoteContentChange={handleNoteContentChange}
               note={note}
             />
+          )} */}
+          {note.title === "" && note.content === "" ? (
+            <p>Belum boleh masih kosong</p>
+          ) : (
+            <>
+            <TitleForm
+              handleTitleChange={handleTitleChange}
+              title={note.title}
+            />
+              <Editor
+                content={note.content}
+                handleNoteContentChange={handleNoteContentChange}
+                note={note}
+              />
+            </>
           )}
         </form>
       </div>

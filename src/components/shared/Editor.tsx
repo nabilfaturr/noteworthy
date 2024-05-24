@@ -10,7 +10,7 @@ export type TEditor = {
 
 const DEFAULT_CONTENT_VALUE = "<em>Tap here to start 🌎️</em>";
 
-const Editor = ({ content, handleNoteContentChange, note }: TEditor) => {
+const Editor = ({ content, handleNoteContentChange }: TEditor) => {
   const editor = useEditor({
     extensions: [StarterKit],
     content: content,

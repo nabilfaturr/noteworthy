@@ -2,16 +2,15 @@ import React from "react";
 
 type TTitleForm = {
   handleTitleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  title: string;
 };
 
-export const DEFAULT_TITLE_VALUE = "Untitled Note";
-
-const TitleForm = ({ handleTitleChange }: TTitleForm) => {
+const TitleForm = ({ handleTitleChange, title }: TTitleForm) => {
   return (
     <input
       type="text"
       className="note-title"
-      defaultValue={DEFAULT_TITLE_VALUE}
+      defaultValue={title}
       onChange={handleTitleChange}
     />
   );
