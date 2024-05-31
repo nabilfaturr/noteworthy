@@ -8,7 +8,7 @@ const UserAvatar = ({ userInfo }: { userInfo: User | undefined }) => {
   return (
     <Avatar>
       <AvatarImage src={imageSrc} alt={`@${username}` || "Avatar"} />
-      <AvatarFallback>AV</AvatarFallback>
+      <AvatarFallback>JD</AvatarFallback>
     </Avatar>
   );
 };
