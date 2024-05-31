@@ -1,6 +1,8 @@
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import React from "react";
+import Toolbar from "../toolbar/Toolbar";
+import Underline from "@tiptap/extension-underline";
 
 export type TEditor = {
   content: string;
@@ -12,7 +14,7 @@ const DEFAULT_CONTENT_VALUE = "<em>Tap here to start 🌎️</em>";
 
 const Editor = ({ content, handleNoteContentChange }: TEditor) => {
   const editor = useEditor({
-    extensions: [StarterKit],
+    extensions: [StarterKit, Underline],
     content: content,
     onUpdate: ({ editor }) => {
       const contentHTML = editor.getHTML();
@@ -27,7 +29,12 @@ const Editor = ({ content, handleNoteContentChange }: TEditor) => {
       return handleNoteContentChange(contentHTML);
     },
   });
-  return <EditorContent editor={editor} className="w-full h-full" />;
+  return (
+    <>
+      <EditorContent editor={editor} className="w-full h-full" />
+      <Toolbar editor={editor} />
+    </>
+  );
 };
 
 export default Editor;

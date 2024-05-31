@@ -1,7 +1,9 @@
 "use client";
 
+import "./style.css";
 import Editor from "@/components/shared/Editor";
 import TitleForm from "@/components/shared/TitleField";
+import { EditorSkeleton } from "@/components/shared/skeleton/Mainbar.skeleton";
 import React from "react";
 import { useDebouncedCallback } from "use-debounce";
 
@@ -20,7 +22,7 @@ const Tiptap = ({ params }: { params: { slug: string } }) => {
 
   React.useEffect(() => {
     const fetchNote = async () => {
-      const response = await fetch(`http://localhost:3000/api/notes/${noteId}`);
+      const response = await fetch(`http://localhost:3000/api/note/${noteId}`);
       const data = await response.json();
       console.log(data);
       setNote(data);
@@ -47,7 +49,7 @@ const Tiptap = ({ params }: { params: { slug: string } }) => {
   };
 
   const fetchData = async (note: { title: string; content: string }) => {
-    const response = await fetch(`http://localhost:3000/api/notes/${noteId}`, {
+    const response = await fetch(`http://localhost:3000/api/note/${noteId}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -59,34 +61,20 @@ const Tiptap = ({ params }: { params: { slug: string } }) => {
   const handleAutoSave = useDebouncedCallback((note) => {
     console.log("Saving..");
     fetchData(note);
-  }, 1500);
+  }, 500);
 
   return (
-    <div className="w-screen h-screen p-10 bg-white">
+    <div className="w-screen h-screen p-6 bg-white">
       <div className="w-full h-full rounded-lg bg-slate-100  border px-8 md:px-16 lg:px-32 py-20">
-        <form className="w-full h-full">
-          {/* {note.title === "" ? (
-            <p>Belum boleh masih kosong</p>
-          ) : (
-            
-          )}
-          {note.content === "" ? (
-            <p>Belum boleh masih kosong</p>
-          ) : (
-            <Editor
-              content={note.content}
-              handleNoteContentChange={handleNoteContentChange}
-              note={note}
-            />
-          )} */}
+        <form className="w-full h-full" onSubmit={(e) => e.preventDefault()}>
           {note.title === "" && note.content === "" ? (
-            <p>Belum boleh masih kosong</p>
+            <EditorSkeleton />
           ) : (
             <>
-            <TitleForm
-              handleTitleChange={handleTitleChange}
-              title={note.title}
-            />
+              <TitleForm
+                handleTitleChange={handleTitleChange}
+                title={note.title}
+              />
               <Editor
                 content={note.content}
                 handleNoteContentChange={handleNoteContentChange}

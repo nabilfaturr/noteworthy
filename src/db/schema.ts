@@ -17,6 +17,14 @@ export const users = sqliteTable("user", {
   image: text("image"),
 });
 
+export const folders = sqliteTable("folder", {
+  id: text("id")
+    .primaryKey()
+    .$defaultFn(() => crypto.randomUUID()),
+  title: text("title").notNull(),
+  userId: text("userId").references(() => users.id, { onDelete: "cascade" }),
+});
+
 export const notes = sqliteTable("note", {
   id: text("id").primaryKey().notNull(),
   title: text("title").default("Untitled Note"),
@@ -26,8 +34,11 @@ export const notes = sqliteTable("note", {
   userId: text("userId")
     .notNull()
     .references(() => users.id, { onDelete: "cascade" }),
-  createdAt: text("created_at").default(sql`(CURRENT_TIMESTAMP)`),
-  updatedAt: text("updated_at").default(sql`(CURRENT_TIMESTAMP)`),
+  folderId: text("folderId").references(() => folders.id, {
+    onDelete: "set null", // Updated to SET NULL
+  }), // nullable reference
+  createdAt: text("created_at").default(new Date().toISOString()),
+  updatedAt: text("updated_at").default(new Date().toISOString()),
 });
 
 export const accounts = sqliteTable(

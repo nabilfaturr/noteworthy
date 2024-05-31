@@ -86,6 +86,18 @@
     @apply border border-blue-600;
   }
 
+  .bgreen {
+    @apply border border-green-700;
+  }
+
+  .byell {
+    @apply border border-yellow-500;
+  }
+
+  .fully {
+    @apply w-full h-full
+  }
+
   .note-title {
     @apply text-3xl font-bold bg-slate-100 mb-8 w-full;
   }

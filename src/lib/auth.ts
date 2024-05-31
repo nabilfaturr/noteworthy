@@ -1,4 +1,4 @@
-import { db } from "@/db/db";
+import { db } from "@/db/client";
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import NextAuth from "next-auth";
 import google from "next-auth/providers/google";
