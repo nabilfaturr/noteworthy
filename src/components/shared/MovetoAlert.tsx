@@ -40,7 +40,7 @@ const MoveToAlert = ({ onCancel, note, closeMoveToAlert }: TMoveToAlert) => {
   const fetchSelectedNotesToFolder = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/notes/${userId}/${selectedFolder.id}`,
+        `/api/notes/${userId}/${selectedFolder.id}`,
         {
           method: "POST",
           headers: {

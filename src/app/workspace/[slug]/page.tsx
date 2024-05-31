@@ -22,7 +22,7 @@ const Tiptap = ({ params }: { params: { slug: string } }) => {
 
   React.useEffect(() => {
     const fetchNote = async () => {
-      const response = await fetch(`http://localhost:3000/api/note/${noteId}`);
+      const response = await fetch(`/api/note/${noteId}`);
       const data = await response.json();
       console.log(data);
       setNote(data);
@@ -49,7 +49,7 @@ const Tiptap = ({ params }: { params: { slug: string } }) => {
   };
 
   const fetchData = async (note: { title: string; content: string }) => {
-    const response = await fetch(`http://localhost:3000/api/note/${noteId}`, {
+    const response = await fetch(`/api/note/${noteId}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

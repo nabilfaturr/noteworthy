@@ -36,8 +36,8 @@ export const useNoteStore = create<TNoteStore>((set) => ({
   fetchNotes: async (type, folderId, userId) => {
     const url =
       type === "folder" && folderId
-        ? `http://localhost:3000/api/notes/${userId}/${folderId}`
-        : `http://localhost:3000/api/notes/${userId}`;
+        ? `/api/notes/${userId}/${folderId}`
+        : `/api/notes/${userId}`;
 
     const options: any =
       type === "folder"

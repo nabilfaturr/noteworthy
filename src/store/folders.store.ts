@@ -31,7 +31,7 @@ export const useFolderStore = create<FolderStore>((set, get) => ({
   fetchFolders: async (userId: string) => {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/folder/${userId}`
+        `/api/folder/${userId}`
       );
 
       if (!response.ok) {
@@ -53,7 +53,7 @@ export const useFolderStore = create<FolderStore>((set, get) => ({
   fetchFolder: async (userId: string, folderId: string) => {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/folder/${userId}/${folderId}`
+        `/api/folder/${userId}/${folderId}`
       );
 
       if (!response.ok) {
@@ -74,7 +74,7 @@ export const useFolderStore = create<FolderStore>((set, get) => ({
   fetchDeleteFolder: async (userId: string, folderId: string) => {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/folder/${userId}`,
+        `/api/folder/${userId}`,
         {
           method: "DELETE",
           headers: {
