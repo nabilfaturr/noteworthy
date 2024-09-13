@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Noteworthy
+
+A Next.js note-taking platform with complete dashboard, robust folder organization, auto save functionality, and rich typography.
+
+## Description
+
+Noteworthy is a powerful and intuitive note-taking application built with modern web technologies. It offers a seamless user experience with features like:
+
+- Complete dashboard for easy note management
+- Robust folder organization to keep your notes structured
+- Auto-save functionality to ensure you never lose your work
+- Rich typography options for expressive note-taking
+
+## Tech Stack
+
+- Next.js 14
+- Tiptap
+- Zustand
+- Auth.js
+- Turso
+- SQLite
+- Drizzle
+- Shadcn UI
+- Tailwind CSS
+
+## Live Demo
+
+Check out the live version of Noteworthy:
+[https://cutt.ly/noteworthy-live](https://cutt.ly/noteworthy-live)
+
+## GitHub Repository
+
+For more details and to contribute to the project, visit our GitHub repository:
+[https://cutt.ly/noteworthy-github](https://cutt.ly/noteworthy-github)
 
 ## Getting Started
 
-First, run the development server:
+To set up the Noteworthy project locally, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Clone the repository:
+   ```
+   git clone https://github.com/your-username/noteworthy.git
+   cd noteworthy
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+   ```
+   npm install
+   ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Set up environment variables:
+   Create a `.env.local` file in the root directory and add the necessary environment variables. (You may need to specify which variables are required)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+4. Run the development server:
+   ```
+   npm run dev
+   ```
 
-## Learn More
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
-To learn more about Next.js, take a look at the following resources:
+## Contributing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+We welcome contributions to Noteworthy! Please read our contributing guidelines before submitting pull requests.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
+This project is licensed under the MIT License.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Acknowledgements
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Thanks to all the open-source projects that made Noteworthy possible.
