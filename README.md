@@ -26,12 +26,12 @@ Noteworthy is a powerful and intuitive note-taking application built with modern
 ## Live Demo
 
 Check out the live version of Noteworthy:
-[https://cutt.ly/noteworthy-live](https://cutt.ly/noteworthy-live)
+[cutt.ly/noteworthy-live](https://cutt.ly/noteworthy-live)
 
 ## GitHub Repository
 
 For more details and to contribute to the project, visit our GitHub repository:
-[https://cutt.ly/noteworthy-github](https://cutt.ly/noteworthy-github)
+[cutt.ly/noteworthy-github](https://cutt.ly/noteworthy-github)
 
 ## Getting Started
 
