@@ -1,6 +1,7 @@
 # Noteworthy
 
 A Next.js note-taking platform with complete dashboard, robust folder organization, auto save functionality, and rich typography.
+![alt cover](https://github.com/user-attachments/assets/c53ff0b7-67e1-4fe2-a7e3-8ce4a5bfa301)
 
 ## Description
 
