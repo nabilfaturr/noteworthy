@@ -72,7 +72,7 @@ const CreateFolderAlert = ({
 
   return (
     <AlertDialog>
-      <Button asChild>
+      <Button variant="ghost" asChild>
         <AlertDialogTrigger className="w-full bg-blue-100 flex gap-2  text-blue-600 hover:bg-blue-200">
           <span className="flex self-start items-center gap-2 w-full h-full">
             <FolderPlusIcon className="w-5 h-5" />
