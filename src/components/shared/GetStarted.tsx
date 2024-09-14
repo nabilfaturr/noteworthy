@@ -8,9 +8,9 @@ const GetStarted = () => {
     <form action={signInAction}>
       <Button
         type="submit"
-        className="self-start px-6 rounded-none text-xl bg-black lg:ml-2 hover:bg-black/80"
+        className="w-28 bg-blue-200 text-blue-500 hover:bg-blue-300"
       >
-        Get Started
+        Sign Up
       </Button>
     </form>
   );

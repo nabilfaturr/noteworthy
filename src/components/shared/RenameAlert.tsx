@@ -45,7 +45,7 @@ const RenameAlert = ({ onConfirm, onCancel, note }: TRenameAlert) => {
             </AlertDialogHeader>
             <AlertDialogFooter>
               <AlertDialogCancel onClick={onCancel}>Cancel</AlertDialogCancel>
-              <AlertDialogAction type="submit">Rename</AlertDialogAction>
+              <AlertDialogAction type="submit" className="bg-blue-600 hover:bg-blue-700">Rename</AlertDialogAction>
             </AlertDialogFooter>
           </form>
         </AlertDialogContent>
