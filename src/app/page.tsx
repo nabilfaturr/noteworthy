@@ -14,7 +14,7 @@ export default async function Home() {
       <div className="w-full min-h-screen flex flex-col justify-center items-center">
         <div className="h-full flex flex-row justify-center items-center mb-20 lg:px-40 gap-20">
           <div className="w-full h-full flex flex-col justify-center p-1 gap-3 sm:gap-5">
-            <h1 className="px-2 flex flex-col items-start text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-center">
+            <h1 className="px-2 flex flex-col items-start text-4xl sm:text-6xl md:text-7xl xl:text-8xl font-bold text-center">
               <span className="w-full">Where Ideas</span>
               <span className="flex flex-row gap-2">
                 Become
