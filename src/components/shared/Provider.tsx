@@ -12,7 +12,7 @@ const Provider = async ({ children, noteId }: TProvider) => {
   const userId = session?.user?.id as string;
 
   if (!session) {
-    await signIn("", { redirectTo: "/notes" });
+    await signIn("", { redirectTo: "/dashboard/all" });
   }
 
   if (noteId) {

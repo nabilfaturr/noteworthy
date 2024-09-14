@@ -99,7 +99,7 @@ const CreateFolderAlert = ({
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>Cancel</AlertDialogCancel>
-            <AlertDialogAction type="submit">Create</AlertDialogAction>
+            <AlertDialogAction type="submit" className="bg-blue-500 text-white hover:bg-blue-600">Create</AlertDialogAction>
           </AlertDialogFooter>
         </form>
       </AlertDialogContent>
