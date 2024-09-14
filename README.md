@@ -8,9 +8,9 @@ A Next.js note-taking platform with complete dashboard, robust folder organizati
 Noteworthy is a powerful and intuitive note-taking application built with modern web technologies. It offers a seamless user experience with features like:
 
 - Complete dashboard for easy note management
-- Robust folder organization to keep your notes structured
+- folder organization to keep your notes structured
 - Auto-save functionality to ensure you never lose your work
-- Rich typography options for expressive note-taking
+- typography options for expressive note-taking
 
 ## Tech Stack
 
